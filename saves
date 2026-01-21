@@ -1,0 +1,7 @@
+{
+  "name": "something",
+  "hp": 100,
+  "attack": 10,
+  "coins_balance": 0,
+  "defense": 1
+}
