@@ -1,6 +1,9 @@
-use serde::ser::{Serialize, SerializeStruct, Serializer};
+use serde::{
+    ser::{Serialize, SerializeStruct, Serializer},
+    Deserialize,
+};
 
-#[derive(Debug)]
+#[derive(Deserialize, Debug)]
 pub struct Player {
     pub name: String,
     pub hp: u32,
