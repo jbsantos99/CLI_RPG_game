@@ -1,13 +1,10 @@
 mod models;
 use crate::models::bosses::Boss;
 use crate::models::player::Player;
-use dialoguer::Error;
-use serde::Deserialize;
-use serde::Serialize;
 
 use ::std::fs;
-use std::arch::x86_64::_CMP_FALSE_OQ;
 use std::fs::File;
+use std::io::BufReader;
 
 use dialoguer::Input;
 use dialoguer::Select;
@@ -30,10 +27,13 @@ fn main() {
     match check_saves() {
         Ok(true) => {
             println!("Save file detected");
+            let save_file = fs::read_to_string("saves/player.json")
+                .expect("failed parsing json save file to string.");
 
-            // let file_path = "saves/player.json";
-            // let loaded_save = serde_json::from_reader(file_path).expect("Error");
-            // println!("This is the data {:?}", loaded_save)
+            let user_file: Player =
+                serde_json::from_str(&save_file).expect("failed reading string save file content");
+
+            println!("this is the user file {:?}", user_file)
         }
 
         Ok(false) => {
