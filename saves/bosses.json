@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Sorretto",
+    "hp": 439,
+    "attack": 11,
+    "defence": 2,
+    "reward": 81,
+    "is_defeated": false
+  },
+  {
+    "name": "Chains",
+    "hp": 846,
+    "attack": 22,
+    "defence": 2,
+    "reward": 168,
+    "is_defeated": false
+  },
+  {
+    "name": "Fumes",
+    "hp": 1593,
+    "attack": 24,
+    "defence": 3,
+    "reward": 267,
+    "is_defeated": false
+  },
+  {
+    "name": "Strings",
+    "hp": 1744,
+    "attack": 32,
+    "defence": 4,
+    "reward": 372,
+    "is_defeated": false
+  },
+  {
+    "name": "Riot",
+    "hp": 2590,
+    "attack": 50,
+    "defence": 5,
+    "reward": 400,
+    "is_defeated": false
+  },
+  {
+    "name": "Sgt. Jacks",
+    "hp": 2682,
+    "attack": 60,
+    "defence": 12,
+    "reward": 486,
+    "is_defeated": false
+  },
+  {
+    "name": "Cpl. Dorsman",
+    "hp": 3822,
+    "attack": 70,
+    "defence": 7,
+    "reward": 567,
+    "is_defeated": false
+  },
+  {
+    "name": "Apollo",
+    "hp": 3536,
+    "attack": 88,
+    "defence": 8,
+    "reward": 640,
+    "is_defeated": false
+  },
+  {
+    "name": "Erskine",
+    "hp": 4572,
+    "attack": 90,
+    "defence": 9,
+    "reward": 783,
+    "is_defeated": false
+  },
+  {
+    "name": "Bullet King",
+    "hp": 4310,
+    "attack": 90,
+    "defence": 20,
+    "reward": 1050,
+    "is_defeated": false
+  }
+]
