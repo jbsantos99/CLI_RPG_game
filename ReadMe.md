@@ -17,3 +17,25 @@ By killing bosses, the player will make money, with money he/she can buy better 
 
 
 
+## Todos
+
+Change check_saves to return only booleans and handle internally if an error occours, maybe loop until theres no longer error.
+
+This seams to be wrong with an empty function
+
+```
+        Ok(true) => {}
+        Ok(false) => {
+            println!("Bosses save files not detected!");
+            generate_bosses();
+        }
+
+        Err(err) => {
+            println!("Error checking bosses save files {}", err)
+        }
+    }
+
+```
+
+
+

@@ -3,7 +3,7 @@ use serde::{Deserialize, Serialize};
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Player {
     pub name: String,
-    pub hp: u32,
+    pub hp: i32,
     pub attack: u32,
     pub defense: u32,
     pub coins_balance: u32,

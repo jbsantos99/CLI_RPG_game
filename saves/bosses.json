@@ -1,82 +1,82 @@
 [
   {
     "name": "Sorretto",
-    "hp": 439,
-    "attack": 11,
-    "defence": 2,
-    "reward": 81,
-    "is_defeated": false
+    "hp": 53,
+    "attack": 5,
+    "defence": 1,
+    "reward": 53,
+    "is_defeated": true
   },
   {
     "name": "Chains",
-    "hp": 846,
-    "attack": 22,
-    "defence": 2,
-    "reward": 168,
-    "is_defeated": false
+    "hp": 100,
+    "attack": 8,
+    "defence": 4,
+    "reward": 90,
+    "is_defeated": true
   },
   {
     "name": "Fumes",
-    "hp": 1593,
-    "attack": 24,
-    "defence": 3,
-    "reward": 267,
+    "hp": 159,
+    "attack": 15,
+    "defence": 6,
+    "reward": 174,
     "is_defeated": false
   },
   {
     "name": "Strings",
-    "hp": 1744,
-    "attack": 32,
+    "hp": 196,
+    "attack": 20,
     "defence": 4,
-    "reward": 372,
+    "reward": 176,
     "is_defeated": false
   },
   {
     "name": "Riot",
-    "hp": 2590,
-    "attack": 50,
+    "hp": 210,
+    "attack": 25,
     "defence": 5,
-    "reward": 400,
+    "reward": 280,
     "is_defeated": false
   },
   {
     "name": "Sgt. Jacks",
-    "hp": 2682,
-    "attack": 60,
-    "defence": 12,
-    "reward": 486,
+    "hp": 312,
+    "attack": 24,
+    "defence": 6,
+    "reward": 462,
     "is_defeated": false
   },
   {
     "name": "Cpl. Dorsman",
-    "hp": 3822,
-    "attack": 70,
+    "hp": 343,
+    "attack": 28,
     "defence": 7,
-    "reward": 567,
+    "reward": 532,
     "is_defeated": false
   },
   {
     "name": "Apollo",
-    "hp": 3536,
-    "attack": 88,
+    "hp": 384,
+    "attack": 40,
     "defence": 8,
-    "reward": 640,
+    "reward": 552,
     "is_defeated": false
   },
   {
     "name": "Erskine",
-    "hp": 4572,
-    "attack": 90,
+    "hp": 441,
+    "attack": 36,
     "defence": 9,
-    "reward": 783,
+    "reward": 639,
     "is_defeated": false
   },
   {
     "name": "Bullet King",
-    "hp": 4310,
-    "attack": 90,
-    "defence": 20,
-    "reward": 1050,
+    "hp": 470,
+    "attack": 50,
+    "defence": 10,
+    "reward": 650,
     "is_defeated": false
   }
 ]

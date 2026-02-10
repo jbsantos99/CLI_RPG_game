@@ -1,19 +1,19 @@
 use serde::{Deserialize, Serialize};
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct Boss {
-    name: String,
-    hp: u32,
-    attack: u32,
-    defence: u32,
-    reward: u32,
-    is_defeated: bool,
+    pub name: String,
+    pub hp: i32,
+    pub attack: u32,
+    pub defence: u32,
+    pub reward: u32,
+    pub is_defeated: bool,
 }
 
 impl Boss {
     pub fn create_boss(
         name: String,
-        hp: u32,
+        hp: i32,
         attack: u32,
         defence: u32,
         reward: u32,
