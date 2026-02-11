@@ -3,7 +3,7 @@ use serde::{Deserialize, Serialize};
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct Boss {
     pub name: String,
-    pub hp: i32,
+    pub hp: u32,
     pub attack: u32,
     pub defence: u32,
     pub reward: u32,
@@ -13,7 +13,7 @@ pub struct Boss {
 impl Boss {
     pub fn create_boss(
         name: String,
-        hp: i32,
+        hp: u32,
         attack: u32,
         defence: u32,
         reward: u32,
@@ -30,7 +30,7 @@ impl Boss {
     }
 }
 
-pub const BOSS_NAMES: [&str; 10] = [
+pub const BOSS_NAMES: [&str; 11] = [
     "Sorretto",
     "Chains",
     "Fumes",
@@ -41,4 +41,5 @@ pub const BOSS_NAMES: [&str; 10] = [
     "Apollo",
     "Erskine",
     "Bullet King",
+    "|-- Back to Menu --|",
 ];
