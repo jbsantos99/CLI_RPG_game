@@ -14,10 +14,17 @@ pub fn generate_bosses() {
 
         let raw_boss = Boss::create_boss(
             String::from(item),
-            (random_number(40, 60) * base_mult).try_into().unwrap(),
-            random_number(4, 6) * base_mult,
-            random_number(1, 3) * base_mult,
-            random_number(40, 80) * base_mult,
+            random_number((100, 120)) * base_mult,
+            (
+                random_number((5, 10)) * base_mult,
+                random_number((10, 15)) * base_mult,
+            ),
+            (
+                random_number((1, 3)) * base_mult,
+                random_number((3, 6)) * base_mult,
+            ),
+            random_number((1 * base_mult, 5 * base_mult)),
+            random_number((40, 80)) * base_mult,
             false,
         );
 

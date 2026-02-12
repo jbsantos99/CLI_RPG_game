@@ -1,82 +1,167 @@
 [
   {
     "name": "Sorretto",
-    "hp": 53,
-    "attack": 5,
-    "defence": 1,
-    "reward": 53,
+    "hp": 116,
+    "attack_range": [
+      7,
+      10
+    ],
+    "defence_range": [
+      1,
+      5
+    ],
+    "crit_chance": 1,
+    "reward": 66,
     "is_defeated": true
   },
   {
     "name": "Chains",
-    "hp": 100,
-    "attack": 8,
-    "defence": 4,
-    "reward": 90,
-    "is_defeated": true
+    "hp": 230,
+    "attack_range": [
+      10,
+      28
+    ],
+    "defence_range": [
+      4,
+      6
+    ],
+    "crit_chance": 5,
+    "reward": 132,
+    "is_defeated": false
   },
   {
     "name": "Fumes",
-    "hp": 159,
-    "attack": 15,
-    "defence": 6,
-    "reward": 174,
+    "hp": 321,
+    "attack_range": [
+      27,
+      33
+    ],
+    "defence_range": [
+      6,
+      12
+    ],
+    "crit_chance": 3,
+    "reward": 150,
     "is_defeated": false
   },
   {
     "name": "Strings",
-    "hp": 196,
-    "attack": 20,
-    "defence": 4,
-    "reward": 176,
+    "hp": 460,
+    "attack_range": [
+      20,
+      40
+    ],
+    "defence_range": [
+      8,
+      20
+    ],
+    "crit_chance": 14,
+    "reward": 272,
     "is_defeated": false
   },
   {
     "name": "Riot",
-    "hp": 210,
-    "attack": 25,
-    "defence": 5,
-    "reward": 280,
+    "hp": 580,
+    "attack_range": [
+      45,
+      55
+    ],
+    "defence_range": [
+      5,
+      20
+    ],
+    "crit_chance": 13,
+    "reward": 330,
     "is_defeated": false
   },
   {
     "name": "Sgt. Jacks",
-    "hp": 312,
-    "attack": 24,
-    "defence": 6,
-    "reward": 462,
+    "hp": 690,
+    "attack_range": [
+      48,
+      78
+    ],
+    "defence_range": [
+      6,
+      18
+    ],
+    "crit_chance": 23,
+    "reward": 402,
     "is_defeated": false
   },
   {
     "name": "Cpl. Dorsman",
-    "hp": 343,
-    "attack": 28,
-    "defence": 7,
-    "reward": 532,
+    "hp": 700,
+    "attack_range": [
+      42,
+      77
+    ],
+    "defence_range": [
+      14,
+      21
+    ],
+    "crit_chance": 21,
+    "reward": 343,
     "is_defeated": false
   },
   {
     "name": "Apollo",
-    "hp": 384,
-    "attack": 40,
-    "defence": 8,
-    "reward": 552,
+    "hp": 952,
+    "attack_range": [
+      40,
+      104
+    ],
+    "defence_range": [
+      8,
+      40
+    ],
+    "crit_chance": 24,
+    "reward": 568,
     "is_defeated": false
   },
   {
     "name": "Erskine",
-    "hp": 441,
-    "attack": 36,
-    "defence": 9,
-    "reward": 639,
+    "hp": 918,
+    "attack_range": [
+      72,
+      90
+    ],
+    "defence_range": [
+      9,
+      27
+    ],
+    "crit_chance": 9,
+    "reward": 657,
     "is_defeated": false
   },
   {
     "name": "Bullet King",
-    "hp": 470,
-    "attack": 50,
-    "defence": 10,
-    "reward": 650,
+    "hp": 1030,
+    "attack_range": [
+      50,
+      120
+    ],
+    "defence_range": [
+      20,
+      30
+    ],
+    "crit_chance": 29,
+    "reward": 510,
+    "is_defeated": false
+  },
+  {
+    "name": "|-- Back to Menu --|",
+    "hp": 1133,
+    "attack_range": [
+      77,
+      110
+    ],
+    "defence_range": [
+      22,
+      55
+    ],
+    "crit_chance": 54,
+    "reward": 462,
     "is_defeated": false
   }
 ]

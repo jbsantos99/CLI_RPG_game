@@ -15,13 +15,18 @@ Player has a struct with total hp, damage, critical hit change, weapons, defense
 By killing bosses, the player will make money, with money he/she can buy better gear and continue.
 
 
+## Implemented
 
+- Critical hit mechanic
+- 
 
 ## Todos
 
-Change check_saves to return only booleans and handle internally if an error occours, maybe loop until theres no longer error.
-
-This seams to be wrong with an empty function
+- Change check_saves to return only booleans and handle internally if an error occours, maybe loop until theres no longer error.
+- Make is so hit value shows after boss name
+- Make the player healthbar be alays a percentage of the of the boss, if the boss has less, invert
+- Change the color of the bar while the health goes down
+- This seams to be wrong with an empty function
 
 ```
         Ok(true) => {}
@@ -36,6 +41,14 @@ This seams to be wrong with an empty function
     }
 
 ```
+
+
+
+
+## Problems
+- Hard time aligning the health bars in opposite directions
+
+
 
 
 
