@@ -1,8 +1,8 @@
 {
-  "name": "tru",
+  "name": "coruja",
   "hp": 100,
   "attack_range": [
-    10,
+    15,
     20
   ],
   "defense_range": [
@@ -10,5 +10,5 @@
     4
   ],
   "crit_chance": 10,
-  "coins_balance": 0
+  "coins_balance": 33
 }

@@ -7,9 +7,12 @@ use crate::{
     menus::{boss_fight_menu::launch_boss_fight_menu, main_menu::launch_main_menu},
     models::bosses::{Boss, BOSS_NAMES},
     state_managers::check_for_save_files::check_boss_saves_files,
+    utils::clear_terminal::clear_terminal,
 };
 
 pub fn launch_boss_menu() {
+    clear_terminal();
+
     match check_boss_saves_files() {
         Ok(true) => {}
         Ok(false) => {

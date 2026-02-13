@@ -1,3 +1,5 @@
+use std::cell::Cell;
+
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
@@ -8,7 +10,7 @@ pub struct Boss {
     pub defence_range: (u32, u32),
     pub crit_chance: u32,
     pub reward: u32,
-    pub is_defeated: bool,
+    pub is_defeated: Cell<bool>,
 }
 
 impl Boss {
@@ -19,7 +21,6 @@ impl Boss {
         defence_range: (u32, u32),
         crit_chance: u32,
         reward: u32,
-        is_defeated: bool,
     ) -> Boss {
         Boss {
             name,
@@ -28,8 +29,20 @@ impl Boss {
             defence_range,
             crit_chance,
             reward,
-            is_defeated,
+            is_defeated: Cell::new(false),
         }
+    }
+
+    pub fn defeated(&self) {
+        self.is_defeated.set(true);
+    }
+
+    pub fn get_reward(&self) -> u32 {
+        if self.is_defeated.get() {
+            return self.reward / 2;
+        }
+
+        self.reward
     }
 }
 

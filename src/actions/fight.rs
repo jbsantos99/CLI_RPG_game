@@ -1,19 +1,42 @@
 use std::time::Duration;
 
 use indicatif::{MultiProgress, ProgressBar, ProgressStyle};
-use serde_json::to_string;
 
 use crate::{
     // menus::boss_menu::launch_boss_menu, models::bosses::Boss, player::getters::get_player_stats,
     bosses::calculate_boss_hit::calculate_boss_hit,
     menus::boss_menu::launch_boss_menu,
-    models::bosses::Boss,
+    models::{bosses::Boss, player_models::Player},
     player::{calculate_player_hit::calculate_player_hit, getters::get_player_stats},
+    progress_bars::update_progbar_msg::update_progbar_msg,
     state_managers::boss_manager::update_boss_state::update_boss_state,
     utils::{clear_terminal::clear_terminal, delay_in_ms::delay_in_ms, line_spacer::line_spacer},
 };
-pub fn update_progbar_msg(progbar: &ProgressBar, msg: String) {
-    progbar.set_message(msg);
+
+pub fn handle_close_progbar(prog_bars: &[&ProgressBar]) {
+    for val in prog_bars {
+        val.finish()
+    }
+}
+
+pub fn handle_battle_won(boss: &Boss, boss_index: usize) {
+    update_boss_state(boss_index);
+}
+
+pub fn collect_boss_rewards(player: &Player, boss: &Boss) {
+    delay_in_ms();
+    println!("before {}", player.coins_balance.get());
+
+    player.incr_coins(boss.get_reward());
+    player.save();
+
+    println!("after {}", player.coins_balance.get());
+
+    println!("after {:#?}", player);
+    delay_in_ms();
+    delay_in_ms();
+    delay_in_ms();
+    delay_in_ms();
 }
 
 pub fn fight_boss(boss_stats: &Boss, boss_index: usize) {
@@ -60,13 +83,13 @@ pub fn fight_boss(boss_stats: &Boss, boss_index: usize) {
     while p_hp > 0 && b_hp > 0 {
         delay_in_ms();
 
-        let hit_given = calculate_player_hit(
+        let (hit_given, is_given_crit) = calculate_player_hit(
             player_stats.attack_range,
             player_stats.crit_chance,
             boss_stats.defence_range,
         );
 
-        let hit_taken = calculate_boss_hit(
+        let (hit_taken, is_taken_crit) = calculate_boss_hit(
             boss_stats.attack_range,
             boss_stats.crit_chance,
             player_stats.defense_range,
@@ -77,45 +100,25 @@ pub fn fight_boss(boss_stats: &Boss, boss_index: usize) {
             b_hp -= hit_given;
             boss_hp_bar.dec(hit_given as u64);
 
-            update_progbar_msg(
-                &boss_hp_bar,
-                [
-                    boss_stats.name.clone(),
-                    String::from("  -"),
-                    hit_given.to_string(),
-                ]
-                .join(""),
-            );
+            update_progbar_msg(&boss_hp_bar, hit_given, is_given_crit);
 
             delay_in_ms();
-            update_progbar_msg(&boss_hp_bar, boss_stats.name.clone());
-            delay_in_ms();
+
             // we can take it
             if hit_taken < p_hp {
                 p_hp -= hit_taken;
                 player_hp_bar.dec(hit_taken as u64);
 
-                update_progbar_msg(
-                    &player_hp_bar,
-                    [
-                        player_stats.name.clone(),
-                        String::from("  -"),
-                        hit_taken.to_string(),
-                    ]
-                    .join(""),
-                );
+                update_progbar_msg(&player_hp_bar, hit_taken, is_taken_crit);
 
                 delay_in_ms();
-                update_progbar_msg(&player_hp_bar, player_stats.name.clone());
             } else {
                 p_hp = 0;
 
                 player_hp_bar.set_position(0);
                 player_hp_bar.finish();
 
-                spacer_bar_bottom.finish();
-                spacer_bar_midle.finish();
-                spacer_bar_top.finish();
+                handle_close_progbar(&[&spacer_bar_top, &spacer_bar_midle, &spacer_bar_bottom]);
 
                 clear_terminal();
                 println!("Player defeated!")
@@ -126,18 +129,19 @@ pub fn fight_boss(boss_stats: &Boss, boss_index: usize) {
             boss_hp_bar.set_position(0);
             boss_hp_bar.finish();
 
-            spacer_bar_bottom.finish();
-            spacer_bar_midle.finish();
-            spacer_bar_top.finish();
+            handle_battle_won(boss_stats, boss_index);
 
-            update_boss_state(boss_index);
+            handle_close_progbar(&[&spacer_bar_top, &spacer_bar_midle, &spacer_bar_bottom]);
+
             clear_terminal();
 
+            collect_boss_rewards(&player_stats, &boss_stats);
             println!("Boss defeated!");
         }
     }
 
     delay_in_ms();
+
     clear_terminal();
     launch_boss_menu();
 }

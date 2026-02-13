@@ -25,7 +25,6 @@ pub fn generate_bosses() {
             ),
             random_number((1 * base_mult, 5 * base_mult)),
             random_number((40, 80)) * base_mult,
-            false,
         );
 
         new_boss_array.push(raw_boss);

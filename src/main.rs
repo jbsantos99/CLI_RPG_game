@@ -3,6 +3,7 @@ mod bosses;
 mod menus;
 mod models;
 mod player;
+mod progress_bars;
 mod state_managers;
 mod utils;
 

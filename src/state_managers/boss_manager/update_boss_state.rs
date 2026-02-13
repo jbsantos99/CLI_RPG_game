@@ -6,12 +6,11 @@ pub fn update_boss_state(boss_index: usize) {
     // no need to check boss save files, since they are required to get to this point
     let bosses_file =
         fs::read_to_string("saves/bosses.json").expect("Failed to load boss file for saving");
-
-    let mut bosses_json: Vec<Boss> = serde_json::from_str(&bosses_file).expect("a");
+    let bosses_json: Vec<Boss> = serde_json::from_str(&bosses_file).expect("a");
 
     println!("update boss {:#?}", bosses_json[boss_index].name);
 
-    bosses_json[boss_index].is_defeated = true;
+    bosses_json[boss_index].is_defeated.set(true);
 
     save_generated_boss_array(&bosses_json);
 }
