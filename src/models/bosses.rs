@@ -1,4 +1,4 @@
-use std::cell::Cell;
+use std::{cell::Cell, fmt};
 
 use serde::{Deserialize, Serialize};
 
@@ -11,6 +11,22 @@ pub struct Boss {
     pub crit_chance: u32,
     pub reward: u32,
     pub is_defeated: Cell<bool>,
+}
+
+impl fmt::Display for Boss {
+    fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
+        write!(
+            formatter,
+            "{} \nHP: {}   |   Attack: {}-{}   |   deffence: {}-{}   |   reward: {} \n",
+            self.name,
+            self.hp,
+            self.attack_range.0,
+            self.attack_range.1,
+            self.defence_range.0,
+            self.defence_range.1,
+            self.reward,
+        )
+    }
 }
 
 impl Boss {
@@ -46,7 +62,7 @@ impl Boss {
     }
 }
 
-pub const BOSS_NAMES: [&str; 11] = [
+pub const BOSS_NAMES: [&str; 10] = [
     "Sorretto",
     "Chains",
     "Fumes",
@@ -57,5 +73,4 @@ pub const BOSS_NAMES: [&str; 11] = [
     "Apollo",
     "Erskine",
     "Bullet King",
-    "|-- Back to Menu --|",
 ];

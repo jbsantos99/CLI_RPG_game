@@ -2,6 +2,7 @@ use dialoguer::Select;
 
 use crate::{
     actions::fight::fight_boss,
+    display::compare_stats::compare_player_boss,
     menus::boss_menu::launch_boss_menu,
     models::{bosses::Boss, player_models::Player},
     player::getters::get_player_stats,
@@ -12,10 +13,8 @@ pub fn launch_boss_fight_menu(selected_boss: &Boss, boss_index: usize) {
     clear_terminal();
     let player_stats: Player = get_player_stats();
 
-    println!("Boss Stats: {:#?}", selected_boss);
-    println!("Your Stats: {:#?}", player_stats);
+    compare_player_boss(&player_stats, selected_boss);
 
-    // println!("Your Stats: {:#?}", player)
     let boss_actions_menu = vec!["Fight", "Go Back"];
 
     let chosen_item = Select::new()

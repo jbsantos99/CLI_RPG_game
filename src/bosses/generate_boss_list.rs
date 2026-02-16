@@ -8,8 +8,6 @@ pub fn generate_bosses() {
     let mut new_boss_array: Vec<Boss> = Vec::new();
 
     for (index, &item) in BOSS_NAMES.iter().enumerate() {
-        println!("Generating {:?}", &item);
-
         let base_mult = index as u32 + 1;
 
         let raw_boss = Boss::create_boss(
@@ -30,9 +28,5 @@ pub fn generate_bosses() {
         new_boss_array.push(raw_boss);
     }
 
-    println!("Boss Generating Finished!");
-    println!("This is the boss array {:#?}", new_boss_array);
-
-    println!("Saving state...");
     save_generated_boss_array(&new_boss_array);
 }

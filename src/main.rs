@@ -1,5 +1,6 @@
 mod actions;
 mod bosses;
+mod display;
 mod menus;
 mod models;
 mod player;

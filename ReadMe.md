@@ -27,14 +27,18 @@ By killing bosses, the player will make money, with money he/she can buy better 
 
 ## Todos
 
+
 #### Code Improvements
 - Change check_saves to return only booleans and handle internally if an error occours, maybe loop until theres no longer error.
+- implement fmt::display for attack and defence ranges
 - Make the player healthbar be alays a percentage of the of the boss, if the boss has less, invert
 - Change the color of the bar while the health goes down ( and have a stronger colors of hp bars for huge number, like purple)
 - add chance of blocking the attack
 - add a little delay when the hit is going to be critical
+- while hovering a boss, show its stats agains the player on the right side
 
 - This seems to be wrong with an empty function
+
 ```
         Ok(true) => {}
         Ok(false) => {
@@ -57,13 +61,17 @@ By killing bosses, the player will make money, with money he/she can buy better 
 - Create xp system
 
 ## Low priority
-- Put the bars in opposite directions
+- put the bars in opposite directions
 - when comparing boss x player stats, display more nicelly the struct
 - create boss and player visuals?
 - add a typing animation intead of just printing stuff
 - add some sound effects
+- change the "go back" keys to something else? ( idk if its needed )
 
 
 
 
 
+
+## Crates to check
+- tabled, prettytable-rs, colprint ( for better printing )

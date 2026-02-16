@@ -1,4 +1,4 @@
-use std::{cell::Cell, fs};
+use std::{cell::Cell, fmt, fs};
 
 use serde::{Deserialize, Serialize};
 
@@ -13,6 +13,12 @@ pub struct Player {
     pub crit_chance: u32,
     pub coins_balance: Cell<u32>,
 }
+
+// impl fmt::Display for Player {
+//     fn fmt(&self, formatter: fmt::Formatter) -> fmt::Result {
+//         write!(formatter, "{} {}", self.)
+//     }
+// }
 
 impl Player {
     pub fn new_player(input_name: String) -> Player {
@@ -42,7 +48,6 @@ impl Player {
     }
 
     pub fn decr_coins(&self, amount: u32) {
-        // check for balance with re4 reference
         if amount > self.coins_balance.get() {
             return println!("Not enough cash, stranger!");
         }
