@@ -43,6 +43,10 @@ impl Player {
         fs::write("saves/player.json", parsed_player_data).expect("Failed to save player data");
     }
 
+    pub fn reset_save(&self) {
+        fs::remove_file("saves/player.json").expect("failed at 'reset_save' for Player");
+    }
+
     pub fn incr_coins(&self, amount: u32) {
         self.coins_balance.set(self.coins_balance.get() + amount);
     }

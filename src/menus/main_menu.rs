@@ -7,9 +7,11 @@ use serde::{Deserialize, Serialize};
 
 use crate::{
     display::term_player_info::term_player_info,
+    main,
     menus::boss_menu::launch_boss_menu,
-    models::player_models::Player,
+    models::player_models::{self, Player},
     player::getters::get_player_stats,
+    state_managers::reset_boss_list::{self, reset_boss_list},
     utils::{clear_terminal::clear_terminal, delay_in_ms::delay_in_ms},
 };
 
@@ -111,7 +113,7 @@ impl Merchant {
     pub fn purchase(self, player: &Player) {
         if self.price > player.coins_balance.get() {
             println!("Not enough cash, Stranger!");
-            delay_in_ms();
+            delay_in_ms(1000);
 
             launch_merchant_menu()
         }
@@ -128,8 +130,8 @@ impl Merchant {
 
         println!("Your HP is now {}", player.hp.get());
 
-        delay_in_ms();
-        delay_in_ms();
+        delay_in_ms(1000);
+        delay_in_ms(1000);
 
         launch_merchant_menu();
     }
@@ -160,11 +162,49 @@ pub fn launch_merchant_menu() {
     }
 }
 
+pub fn launch_saves_menu() {
+    let game_menu_options = vec!["Reset Player", "Reset Bosses"];
+
+    let chosen_item = Select::new()
+        .with_prompt("Save File Options")
+        .default(0)
+        .items(&game_menu_options)
+        .interact_opt()
+        .unwrap();
+
+    match chosen_item {
+        Some(option) => {
+            match game_menu_options[option] {
+                "Reset Player" => {
+                    let player = get_player_stats();
+                    player.reset_save();
+
+                    println!("Player data reset. Back to main menu.");
+                    delay_in_ms(1500);
+                    main();
+                }
+
+                "Reset Bosses" => {
+                    reset_boss_list();
+                    println!("Boss list reset. Back to main menu.");
+                    delay_in_ms(1500);
+
+                    main()
+                }
+
+                &_ => todo!(),
+            }
+            println!("{}", option)
+        }
+        None => launch_main_menu(),
+    }
+}
+
 pub fn launch_main_menu() {
     clear_terminal();
     term_player_info();
 
-    let game_menu_options = vec!["Fight", "Merchant", "Quit Game"];
+    let game_menu_options = vec!["Fight", "Merchant", "Saves", "Quit Game"];
 
     let chosen_item = Select::new()
         .with_prompt("Menu")
@@ -178,6 +218,7 @@ pub fn launch_main_menu() {
         "Fight" => launch_boss_menu(),
         "Merchant" => launch_merchant_menu(),
         "Quit Game" => println!("Exiting Game"),
+        "Saves" => launch_saves_menu(),
         &_ => todo!(),
     }
 }

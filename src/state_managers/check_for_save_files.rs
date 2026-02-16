@@ -1,25 +1,10 @@
-use std::{fs, io::Result};
-
-pub fn check_player_save_files() -> Result<bool> {
+use std::fs;
+pub fn check_player_save_files() -> bool {
     let file_path = "saves/player.json";
-
-    match fs::exists(file_path) {
-        Ok(ok) => Ok(ok),
-        Err(e) => {
-            eprintln!("Error checking for player save files: {}", e);
-            Err(e)
-        }
-    }
+    fs::exists(file_path).expect("Fail on 'check_player_save_files'")
 }
 
-pub fn check_boss_saves_files() -> Result<bool> {
+pub fn check_boss_saves_files() -> bool {
     let file_path = "saves/bosses.json";
-
-    match fs::exists(file_path) {
-        Ok(ok) => Ok(ok),
-        Err(e) => {
-            eprintln!("Error checking for bosses save files: {}", e);
-            Err(e)
-        }
-    }
+    fs::exists(file_path).expect("Fail on 'check_boss_saves_files'")
 }

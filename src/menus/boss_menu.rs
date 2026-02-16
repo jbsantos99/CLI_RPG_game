@@ -16,15 +16,8 @@ pub fn launch_boss_menu() {
     clear_terminal();
     term_player_info();
 
-    match check_boss_saves_files() {
-        Ok(true) => {}
-        Ok(false) => {
-            generate_bosses();
-        }
-
-        Err(err) => {
-            println!("Error checking bosses save files {}", err)
-        }
+    if !check_boss_saves_files() {
+        generate_bosses();
     }
 
     let boss_list: Vec<Boss> = get_boss_list();

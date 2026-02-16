@@ -21,7 +21,7 @@ pub fn update_progbar_msg(progbar: &ProgressBar, hit_value: u32, is_crit: bool) 
         .join(""),
     );
 
-    delay_in_ms();
+    delay_in_ms(1000);
 
     progbar.set_message(progbar_original_name);
 }

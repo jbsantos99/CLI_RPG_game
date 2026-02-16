@@ -58,7 +58,7 @@ pub fn fight_boss(boss_stats: &Boss, boss_index: usize) {
     boss_hp_bar.set_position(b_hp as u64);
 
     while p_battle_hp > 0 && b_hp > 0 {
-        delay_in_ms();
+        delay_in_ms(1000);
 
         let (hit_given, is_given_crit) = calculate_player_hit(
             player_stats.attack_range,
@@ -78,7 +78,7 @@ pub fn fight_boss(boss_stats: &Boss, boss_index: usize) {
 
             update_hp_on_hit(&boss_hp_bar, hit_given, is_given_crit);
 
-            delay_in_ms();
+            delay_in_ms(1000);
 
             // we can take it
             if hit_taken < p_battle_hp {
@@ -119,7 +119,7 @@ pub fn fight_boss(boss_stats: &Boss, boss_index: usize) {
         }
     }
 
-    delay_in_ms();
+    delay_in_ms(1000);
 
     clear_terminal();
     launch_boss_menu();

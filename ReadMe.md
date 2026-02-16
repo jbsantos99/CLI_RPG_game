@@ -53,8 +53,13 @@ By killing bosses, the player will make money, with money he/she can buy better 
 
 ```
 
+#### Random Ideas
+- what if I split the terminal into 2? and kinda ran multiple things at once. Like on tab is forgering a weapon and the other is the game or its farming xp?
+- implement game modes: easy, hard, normal, new game plus
+- implement multiple save slots
 
 #### Game features
+- Add a menu option to manage saves
 - Add a vampire mechanic: part of every hit you give goes back to you ( some bosses can have this too ). [ maybe you can you gain it by defeating the boss]
 - create a "select path", for gaining xp levels, where you can choose between a couple buff options ( with debuffs maybe? )
 - create a function to raize coins and ex ( bribe ), to have the max of 10h of bribe
