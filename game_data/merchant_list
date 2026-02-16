@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Health Elixir 1",
+    "price": 100,
+    "description": "Will permenently increase your health by 100 points",
+    "modifier": {
+      "mod_type": "TotalHealth",
+      "value": 100
+    },
+    "is_bought": false
+  },
+  {
+    "name": "Health Elixir 2",
+    "price": 300,
+    "description": "Will permenently increase your health by 150 points",
+    "modifier": {
+      "mod_type": "TotalHealth",
+      "value": 150
+    },
+    "is_bought": false
+  }
+]

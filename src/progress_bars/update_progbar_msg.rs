@@ -25,3 +25,9 @@ pub fn update_progbar_msg(progbar: &ProgressBar, hit_value: u32, is_crit: bool) 
 
     progbar.set_message(progbar_original_name);
 }
+
+pub fn close_progbars(prog_bars: &[&ProgressBar]) {
+    for val in prog_bars {
+        val.finish()
+    }
+}

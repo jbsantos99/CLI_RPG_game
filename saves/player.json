@@ -1,6 +1,6 @@
 {
   "name": "coruja",
-  "hp": 100,
+  "hp": 400,
   "attack_range": [
     15,
     20
@@ -10,5 +10,5 @@
     4
   ],
   "crit_chance": 10,
-  "coins_balance": 33
+  "coins_balance": 132
 }
