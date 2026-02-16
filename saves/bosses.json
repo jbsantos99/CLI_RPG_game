@@ -27,7 +27,7 @@
     ],
     "crit_chance": 5,
     "reward": 132,
-    "is_defeated": false
+    "is_defeated": true
   },
   {
     "name": "Fumes",

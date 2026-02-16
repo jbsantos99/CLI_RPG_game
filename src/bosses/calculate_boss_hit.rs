@@ -7,10 +7,14 @@ pub fn calculate_boss_hit(
 ) -> (u32, bool) {
     let crit_value = check_crit_hit(boss_crit_chance);
 
+    let player_defence = random_number(player_defence_range);
+    let boss_hit = random_number(boss_hit_range);
+
     let is_critical = crit_value == 2;
 
-    (
-        random_number(boss_hit_range) * crit_value - random_number(player_defence_range),
-        is_critical,
-    )
+    if player_defence >= boss_hit * crit_value {
+        return (0, is_critical);
+    } else {
+        return (boss_hit * crit_value - player_defence, is_critical);
+    }
 }
