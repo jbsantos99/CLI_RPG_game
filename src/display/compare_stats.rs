@@ -1,4 +1,4 @@
-use crate::models::{bosses::Boss, player_models::Player};
+use crate::models::{bosses::Boss, player::Player};
 
 pub fn compare_player_boss(player: &Player, boss: &Boss) {
     println!("");
@@ -7,11 +7,11 @@ pub fn compare_player_boss(player: &Player, boss: &Boss) {
         "{}  -  HP {} | Attack {}-{} | Deffence {}-{} | Crit Chance {}",
         player.name,
         player.hp.get(),
-        player.attack_range.0,
-        player.attack_range.1,
-        player.defense_range.0,
-        player.defense_range.1,
-        player.crit_chance
+        player.attack_range.get().0,
+        player.attack_range.get().1,
+        player.defense_range.get().0,
+        player.defense_range.get().1,
+        player.crit_chance.get(),
     );
 
     println!(

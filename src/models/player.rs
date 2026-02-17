@@ -1,4 +1,4 @@
-use std::{cell::Cell, fmt, fs};
+use std::{cell::Cell, fs};
 
 use serde::{Deserialize, Serialize};
 
@@ -8,9 +8,9 @@ use crate::models::bosses::Boss;
 pub struct Player {
     pub name: String,
     pub hp: Cell<u32>,
-    pub attack_range: (u32, u32),
-    pub defense_range: (u32, u32),
-    pub crit_chance: u32,
+    pub attack_range: Cell<(u32, u32)>,
+    pub defense_range: Cell<(u32, u32)>,
+    pub crit_chance: Cell<u32>,
     pub coins_balance: Cell<u32>,
 }
 
@@ -25,9 +25,9 @@ impl Player {
         Player {
             name: input_name,
             hp: Cell::new(100),
-            attack_range: (15, 20),
-            defense_range: (1, 4),
-            crit_chance: 10,
+            attack_range: Cell::new((15, 20)),
+            defense_range: Cell::new((1, 4)),
+            crit_chance: Cell::new(10),
             coins_balance: Cell::new(0),
         }
     }

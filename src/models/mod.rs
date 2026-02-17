@@ -1,2 +1,3 @@
 pub mod bosses;
-pub mod player_models;
+pub mod merchant;
+pub mod player;

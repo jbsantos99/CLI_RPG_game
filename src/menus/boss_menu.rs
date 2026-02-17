@@ -2,7 +2,7 @@ use dialoguer::{theme::ColorfulTheme, Select};
 
 use crate::{
     bosses::generate_boss_list::generate_bosses,
-    display::term_player_info::term_player_info,
+    display::{game_commands::display_game_commands, term_player_info::term_player_info},
     menus::{boss_fight_menu::launch_boss_fight_menu, main_menu::launch_main_menu},
     models::bosses::Boss,
     state_managers::{
@@ -15,6 +15,7 @@ use crate::{
 pub fn launch_boss_menu() {
     clear_terminal();
     term_player_info();
+    display_game_commands();
 
     if !check_boss_saves_files() {
         generate_bosses();

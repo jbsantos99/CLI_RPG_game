@@ -6,11 +6,11 @@ pub fn term_player_info() {
     println!(
         "HP {}pts   |   Attack {}-{}   |   Deffence {}-{}      |     Crit. Chance {}%     |     Gold ${}",
         player.hp.get(),
-        player.attack_range.0,
-        player.attack_range.1,
-        player.defense_range.0,
-        player.defense_range.1,
-        player.crit_chance,
+        player.attack_range.get().0,
+        player.attack_range.get().1,
+        player.defense_range.get().0,
+        player.defense_range.get().1,
+        player.crit_chance.get(),
         player.coins_balance.get(),
     );
 

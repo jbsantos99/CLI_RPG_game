@@ -24,12 +24,14 @@ By killing bosses, the player will make money, with money he/she can buy better 
 - Critical hit mechanic
 - Make is so hit value shows after boss name
 - Implement a money system, boss pays after death ( after defeated, boss pays half )
+- Change check_saves to return only booleans and handle internally if an error occours, maybe loop until theres no longer error.
+- Add a menu option to manage saves
+
 
 ## Todos
 
 
 #### Code Improvements
-- Change check_saves to return only booleans and handle internally if an error occours, maybe loop until theres no longer error.
 - implement fmt::display for attack and defence ranges
 - Make the player healthbar be alays a percentage of the of the boss, if the boss has less, invert
 - Change the color of the bar while the health goes down ( and have a stronger colors of hp bars for huge number, like purple)
@@ -37,29 +39,19 @@ By killing bosses, the player will make money, with money he/she can buy better 
 - add a little delay when the hit is going to be critical
 - while hovering a boss, show its stats agains the player on the right side
 
-- This seems to be wrong with an empty function
-
-```
-        Ok(true) => {}
-        Ok(false) => {
-            println!("Bosses save files not detected!");
-            generate_bosses();
-        }
-
-        Err(err) => {
-            println!("Error checking bosses save files {}", err)
-        }
-    }
-
-```
 
 #### Random Ideas
 - what if I split the terminal into 2? and kinda ran multiple things at once. Like on tab is forgering a weapon and the other is the game or its farming xp?
 - implement game modes: easy, hard, normal, new game plus
 - implement multiple save slots
+- have types of builds, like one focused on defence, attack or crit, that lacks
+points in other areas
+
+
+
+
 
 #### Game features
-- Add a menu option to manage saves
 - Add a vampire mechanic: part of every hit you give goes back to you ( some bosses can have this too ). [ maybe you can you gain it by defeating the boss]
 - create a "select path", for gaining xp levels, where you can choose between a couple buff options ( with debuffs maybe? )
 - create a function to raize coins and ex ( bribe ), to have the max of 10h of bribe

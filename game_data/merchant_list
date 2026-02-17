@@ -1,7 +1,7 @@
 [
   {
     "name": "Health Elixir 1",
-    "price": 100,
+    "price": 200,
     "description": "Will permenently increase your health by 100 points",
     "modifier": {
       "mod_type": "TotalHealth",
@@ -12,10 +12,50 @@
   {
     "name": "Health Elixir 2",
     "price": 300,
-    "description": "Will permenently increase your health by 150 points",
+    "description": "Will permenently increase your health by 200 points",
     "modifier": {
       "mod_type": "TotalHealth",
-      "value": 150
+      "value": 200
+    },
+    "is_bought": false
+  },
+  {
+    "name": "Attack 1",
+    "price": 130,
+    "description": "Increases min. and max. attack by 5. (eg. 5 - 10  =>  10 - 15) ",
+    "modifier": {
+      "mod_type": "Attack",
+      "value": 5
+    },
+    "is_bought": false
+  },
+  {
+    "name": "Attack 2",
+    "price": 180,
+    "description": "Increases min. and max. attack by 5. (eg. 8 - 10  =>  13 - 18) ",
+    "modifier": {
+      "mod_type": "Attack",
+      "value": 8
+    },
+    "is_bought": false
+  },
+  {
+    "name": "Deadeye",
+    "price": 150,
+    "description": "This will permenently increase critical hit chance by 10%",
+    "modifier": {
+      "mod_type": "CritHitChance",
+      "value": 10
+    },
+    "is_bought": false
+  },
+  {
+    "name": "Eagle Eye",
+    "price": 90,
+    "description": "This will permenently increase critical hit chance by 5%",
+    "modifier": {
+      "mod_type": "CritHitChance",
+      "value": 5
     },
     "is_bought": false
   }

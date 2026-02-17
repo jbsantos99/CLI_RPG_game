@@ -2,7 +2,7 @@ use std::fs;
 
 use dialoguer::Input;
 
-use crate::{launch_main_menu, models::player_models::Player};
+use crate::{launch_main_menu, models::player::Player};
 
 pub fn handle_new_character_creation() {
     let name: String = Input::new()

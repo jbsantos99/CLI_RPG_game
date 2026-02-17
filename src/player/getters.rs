@@ -1,6 +1,6 @@
 use std::fs;
 
-use crate::models::player_models::Player;
+use crate::models::player::Player;
 
 pub fn get_player_stats() -> Player {
     let player_stats = fs::read_to_string("saves/player.json")

@@ -4,7 +4,7 @@ use crate::{
     actions::fight::fight_boss,
     display::compare_stats::compare_player_boss,
     menus::boss_menu::launch_boss_menu,
-    models::{bosses::Boss, player_models::Player},
+    models::{bosses::Boss, player::Player},
     player::getters::get_player_stats,
     utils::clear_terminal::clear_terminal,
 };

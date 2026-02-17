@@ -1,4 +1,16 @@
+### notes
+
+
+#### Decisions
+
+attack and defence are ranges as (u32, u32), but the struct that holds 
+the MerchantItem value is a single u32. To set it I made it so we use the single
+value will be added to both number in the (u32, u32) cell. This is single
+solution that could change in the future.
+
+
 In this case, I can mutate the msg even while passing an read reference of progress bar, because 
+
 the mutation happens internally. This is interior mutability in RUST.
 
 Its a design choice, it all depends if the creator used &self or &mut self when creating it.

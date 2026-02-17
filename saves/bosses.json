@@ -12,7 +12,7 @@
     ],
     "crit_chance": 4,
     "reward": 68,
-    "is_defeated": false
+    "is_defeated": true
   },
   {
     "name": "Chains",
@@ -27,7 +27,7 @@
     ],
     "crit_chance": 9,
     "reward": 88,
-    "is_defeated": false
+    "is_defeated": true
   },
   {
     "name": "Fumes",

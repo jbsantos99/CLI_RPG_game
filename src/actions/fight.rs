@@ -61,15 +61,15 @@ pub fn fight_boss(boss_stats: &Boss, boss_index: usize) {
         delay_in_ms(1000);
 
         let (hit_given, is_given_crit) = calculate_player_hit(
-            player_stats.attack_range,
-            player_stats.crit_chance,
+            player_stats.attack_range.get(),
+            player_stats.crit_chance.get(),
             boss_stats.defence_range,
         );
 
         let (hit_taken, is_taken_crit) = calculate_boss_hit(
             boss_stats.attack_range,
             boss_stats.crit_chance,
-            player_stats.defense_range,
+            player_stats.defense_range.get(),
         );
 
         // will this hit kill the boss?
